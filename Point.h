@@ -1,23 +1,29 @@
-//
-// Created by luciano on 17/11/17.
-//
-
 #ifndef COMPUTACAOGRAFICA_POINT_H
 #define COMPUTACAOGRAFICA_POINT_H
 
 
+#include <GL/glut.h>
+
 class Point {
 private:
-    float x, y, z;
+    GLfloat x, y, z;
 public:
-    Point(float x, float y, float z);
+    Point(GLfloat x, GLfloat y, GLfloat z);
 
-    float getX() const;
+    GLfloat getX() const;
 
-    float getY() const;
+    void setX(GLfloat x);
 
-    float getZ() const;
+    GLfloat getY() const;
+
+    void setY(GLfloat y);
+
+    GLfloat getZ() const;
+
+    void setZ(GLfloat z);
+
+    virtual ~Point();
 };
 
 
-#endif //COMPUTACAOGRAFICA_POINT_H
+#endif

@@ -15,6 +15,7 @@ GLfloat xSpeed = 0.02f;
 GLfloat ySpeed = 0.007f;
 GLfloat zSpeed = 0.01f;
 GLfloat aSpeed = 45.0f;
+GLfloat tSpeed = 0.05;
 
 GLfloat angle = 45.0f;
 GLfloat ballX = 0.0f;
@@ -36,7 +37,7 @@ void displayTriangle(float z);
 void displayBall();
 void display();
 void timer(int value);
-void keyPress(int key);
+void keyPress(int key, int x, int y);
 
 int main(int argc, char** argv) {
 
@@ -134,18 +135,21 @@ void reshape(GLsizei width, GLsizei height) {
      */
     gluPerspective(45.0f, aspect, 0.1f, 100.0f);
 
-    triangleXMin = clipAreaXleft + 0.05;
-    triangleXMax = clipAreaXRight - 0.05;
+    triangleXMin = (GLfloat) clipAreaXleft + tSpeed;
+    triangleXMax = (GLfloat) clipAreaXRight - tSpeed;
 }
 
 void displayTriangle(float z) {
     glPushMatrix();
     glTranslatef(triangleX, -0.5f, 2.3f);
 
+    // R G B
     glBegin(GL_TRIANGLES);
         glColor3f(1.0f, 0.0f, 0.0f);
         glVertex3f(0.3f, -0.3f, -3.5f + z);
+        glColor3f(0.0f, 1.0f, 0.0f);
         glVertex3f(-0.3f, -0.3f, -3.5f + z);
+        glColor3f(0.0f, 0.0f, 1.0f);
         glVertex3f(-0.3f, 0.3f, -3.5f + z);
     glEnd();
     glPopMatrix();
@@ -204,8 +208,16 @@ void display() {
     glColor3f(1.0f, 1.0f, 0.0f);
     back.draw(new Point(1.0f, -1.0f, -1.0f), new Point(-1.0f, -1.0f, -1.0f), new Point(-1.0f, 1.0f, -1.0f), new Point(1.0f, 1.0f, -1.0f));
 
+    /**
+     * quad in back face
+     * gray color
+     */
+
+    glPushMatrix();
+    glRotatef(45.0, 0.0, 0.0, 1.0);
     glColor3f(0.2f, 0.2f, 0.2f);
     quad.draw(new Point(0.4f, -0.4f, -0.4f), new Point(-0.4f, -0.4f, -0.4f), new Point(-0.4f, 0.4f, -0.4f), new Point(0.4f, 0.4f, -0.4f));
+    glPopMatrix();
 
     /**
      * left face (x = -1.0f)
@@ -240,7 +252,7 @@ void display() {
 }
 
 /* Press Key */
-void keyPress(int key) {
+void keyPress(int key, int x, int y) {
     switch (key) {
         case GLUT_KEY_UP:
             ballZ -= (ballZ > 1.1) ? zSpeed : 0;
