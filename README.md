@@ -1,21 +1,21 @@
-# Computação gráfica #
+# Computer Graphics
 
-Este repositório contém o sistema da prova da 3ª unidade de computação gráfica
+This repository contains the system of proof of the 3rd unit of computer graphics
 
-## Projeto GameBall ##
+## GameBall Project
 
-## Desenvolvimento ##
+## Stack of Development
 
 Git, C++, OpenGL, GLUT
 
-## Siga os passos abaixo para iniciar ##
+## Follow the steps below to start
 
-#### Clone o repositório ####
-`git clone https://bitbucket.org/lucianotavernard/computacao_grafica.git`
+#### Clone the repository
+`git clone https://github.com/ltavernard/computer-graphics.git`
 
-### Configure o compilador ###
+### Configure the compiler
 
-#### CLion ####
+#### CLion
 `find_package(OpenGL REQUIRED)`
 `find_package(GLUT REQUIRED)`
 
@@ -23,17 +23,12 @@ Git, C++, OpenGL, GLUT
 
 `target_link_libraries(${PROJECT_NAME} ${OPENGL_LIBRARIES} ${GLUT_LIBRARY})`
 
-#### CodeBlocks ####
+### Install the xmu and xi libraries
 
-### Instale as bibliotecas xmu e xi ###
-
-#### Linux ####
+#### Linux
 `sudo apt-get install libxmu-dev libxi-dev`
 
-#### Windows ####
-``
-
-## Responsável pelo projeto ##
+## Project Managers
 
 * Luciano Tavernard
 * Danilo Wesley

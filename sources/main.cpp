@@ -9,7 +9,7 @@
  */
 #include <GL/glut.h>
 #include <iostream>
-#include "Face.h"
+#include "../headers/Face.h"
 
 GLfloat xSpeed = 0.02f;
 GLfloat ySpeed = 0.007f;

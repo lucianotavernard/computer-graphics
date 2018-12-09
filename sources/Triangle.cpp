@@ -1,5 +1,5 @@
 
-#include "Triangle.h"
+#include "../headers/Triangle.h"
 
 Triangle::Triangle(GLfloat x, GLfloat y, GLfloat z) : x(x), y(y), z(z) {
     Triangle::x = x;

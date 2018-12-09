@@ -1,5 +1,5 @@
 
-#include "Point.h"
+#include "../headers/Point.h"
 
 Point::Point(GLfloat x, GLfloat y, GLfloat z) : x(x), y(y), z(z) {
     Point::x = x;

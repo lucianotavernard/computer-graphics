@@ -1,6 +1,6 @@
 
 #include <GL/gl.h>
-#include "Face.h"
+#include "../headers/Face.h"
 
 void Face::draw(Point *point1, Point *point2, Point *point3, Point *point4) {
     glBegin(GL_QUADS);

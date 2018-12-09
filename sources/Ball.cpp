@@ -1,5 +1,5 @@
 
-#include "Ball.h"
+#include "../headers/Ball.h"
 
 Ball::Ball(GLdouble radius) : radius(radius) {
     Ball::radius = radius;
